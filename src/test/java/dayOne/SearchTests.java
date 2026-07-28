@@ -7,6 +7,13 @@ import static com.codeborne.selenide.Selenide.*;
 public class SearchTests {
     @Test
     void successfulSearchTest() {
+
+        /*
+        Открытие в браузере гугл
+        Вводу в поисковую строку слова "selenide" и нажатие энтера
+        Поиск в найденных вариантах текста "https://selenide.org"
+        */
+
         open("https://www.google.com/");
         $("[name=q]").setValue("selenide").pressEnter();
         $("[id=search]").shouldHave(text("https://selenide.org"));
